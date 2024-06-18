@@ -6,25 +6,29 @@
         {
             string word1 = "ab";
             string word2 = "pqrs";
+            string mergedString = "";
             int i = 0;
         
 
-            int wordLength = Math.Min(word1.Length, word2.Length);
+            
 
-            while (i < wordLength) 
+            while (i < word1.Length || i < word2.Length) 
             {
-                Console.Write(word1[i]);
-                Console.Write(word2[i]);
+                if (i < word1.Length) 
+                {
+                    mergedString += word1[i];
+                }
+                if (i < word2.Length) 
+                {
+                    mergedString += word2[i];
+                }
                 i++;
+            
             }
-            if (word1.Length > wordLength) 
-            {
-                Console.WriteLine(word1[i..]);
-            }
-            else if (word2.Length > wordLength) 
-            {
-                Console.WriteLine(word2[i..]);
-            }
+            Console.WriteLine(mergedString);
+            
+            
+            
 
             
             
